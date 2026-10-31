@@ -3,6 +3,13 @@
 <html lang="am">
 <head>
 <meta charset="utf-8"/>
+ <link rel="manifest" href="/pro/manifest.json">
+
+<meta name="theme-color" content="#087f5b">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="#087f5b" name="theme-color"/>
 <meta content="BaleShop Pro is an Amharic-first shop management app for products, sales, expenses, debts and reports." name="description"/>
@@ -917,6 +924,15 @@ function renderProductProfitPage(){
  if(body)body.innerHTML=rows.length?rows.map(x=>`<tr><td>${typeof esc==='function'?esc(x.name):x.name}</td><td>${x.qty}</td><td>${money(x.revenue)}</td><td>${money(x.cost)}${x.missingCost?' *':''}</td><td>${money(x.profit)}${x.missingCost?' *':''}</td></tr>`).join(''):'<tr><td colspan="5">ገና የሽያጭ መረጃ የለም።</td></tr>';
 }
 
+</script>
+ <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/pro/service-worker.js")
+      .then(() => console.log("BaleShop PWA Ready"))
+      .catch(error => console.error(error));
+  });
+}
 </script>
 </body>
 </html>
