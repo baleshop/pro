@@ -185,6 +185,136 @@ td strong{color:#203d2f}
 .shop-profile-box>div{display:flex;flex-direction:column;gap:7px;min-width:0}
 .unit-badge{display:inline-flex;align-items:center;gap:4px;border-radius:7px;padding:2px 7px;background:#eef2ff;color:#4338ca;font-size:11px;font-weight:800}
 @media(max-width:520px){.shop-profile-box{align-items:flex-start;flex-direction:column}.shop-profile-box>div{width:100%}}
+
+/* ===== Simplified card-based page layout ===== */
+.page{gap:16px}
+.page.active{display:block}
+.page .panel,
+.page .card,
+.page .shop-summary-card,
+.page .scanner-card,
+.page .receipt{
+  background:var(--card,#fff);
+  border:1px solid var(--line,#e5e7eb);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 6px 22px rgba(20,35,55,.055);
+  margin-bottom:16px;
+}
+.page .panelhead{
+  padding-bottom:11px;
+  border-bottom:1px solid var(--line,#e5e7eb);
+}
+.page .feature-card{
+  border-radius:18px;
+  background:var(--card,#fff);
+  border:1px solid var(--line,#e5e7eb);
+  box-shadow:0 5px 18px rgba(20,35,55,.055);
+}
+.page .cards > *{
+  min-width:0;
+  border-radius:16px;
+}
+.page .formgrid,
+.page .grid2{
+  gap:14px;
+}
+.page .formgrid{
+  padding:14px;
+  border:1px solid var(--line,#e5e7eb);
+  border-radius:15px;
+  background:rgba(248,250,252,.72);
+}
+.page .toolbar{
+  padding:12px;
+  border:1px solid var(--line,#e5e7eb);
+  border-radius:14px;
+  background:var(--card,#fff);
+}
+.page .table-wrap,
+.page .table-responsive,
+.page .table-container{
+  overflow-x:auto;
+  border:1px solid var(--line,#e5e7eb);
+  border-radius:14px;
+  background:var(--card,#fff);
+}
+.page table{border-radius:12px;overflow:hidden}
+.page th{background:#f4f7f9}
+.page .stat{
+  border-radius:16px;
+  border:1px solid var(--line,#e5e7eb);
+  box-shadow:0 5px 18px rgba(20,35,55,.05);
+}
+.page .hidden{display:none!important}
+@media(max-width:640px){
+ .page .panel,.page .card,.page .shop-summary-card,.page .scanner-card,.page .receipt{padding:14px;border-radius:15px}
+ .page .formgrid{padding:11px}
+ .page .panelhead{align-items:flex-start;flex-wrap:wrap}
+ .page .feature-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .page .feature-card{min-height:112px;padding:13px}
+}
+
+
+/* Tap a category card to open its contents */
+.workspace-intro{margin:4px 0 18px}
+.workspace-intro h2{margin:0 0 6px;font-size:22px}
+.workspace-intro p{margin:0;color:var(--muted,#64748b)}
+.menu-card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.menu-card{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:10px;min-height:190px;padding:20px;border:1px solid var(--line,#e5e7eb);border-radius:20px;background:var(--card,#fff);color:var(--text,#17212b);box-shadow:0 8px 24px rgba(20,35,55,.07);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+.menu-card:hover{transform:translateY(-3px);box-shadow:0 13px 30px rgba(20,35,55,.12)}
+.menu-card .menu-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;background:rgba(8,127,91,.10);font-size:25px}
+.menu-card strong{font-size:18px}
+.menu-card small{font-size:13px;color:var(--muted,#64748b);line-height:1.5}
+.menu-card b{margin-top:auto;color:var(--primary,#087f5b);font-size:13px}
+.back-to-menu{margin:0 0 15px;padding:9px 13px;border-radius:12px}
+@media(max-width:600px){.menu-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.menu-card{min-height:170px;padding:14px}.menu-card strong{font-size:16px}.menu-card small{font-size:12px}}
+
+
+/* ===== Profit page visual refresh ===== */
+#page-profit{max-width:1120px;margin:0 auto}
+#page-profit .profit-hero{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:25px 28px;margin:4px 0 24px;border-radius:23px;background:linear-gradient(120deg,#075e46,#0b9870);color:#fff;box-shadow:0 14px 30px rgba(5,95,70,.18)}
+#page-profit .profit-hero:after{content:"";position:absolute;width:230px;height:230px;border:1px solid rgba(255,255,255,.14);border-radius:50%;right:70px;top:-130px;box-shadow:0 0 0 25px rgba(255,255,255,.035),0 0 0 52px rgba(255,255,255,.025)}
+#page-profit .profit-eyebrow{font-size:10px;letter-spacing:2px;font-weight:800;opacity:.75}
+#page-profit .profit-hero h2{font-size:26px;margin:8px 0}
+#page-profit .profit-hero p{margin:0;color:rgba(255,255,255,.83);font-size:14px}
+#page-profit .profit-hero-icon{z-index:1;display:grid;place-items:center;width:76px;height:76px;border-radius:22px;background:rgba(255,255,255,.16);font-size:38px}
+#page-profit .profit-summary-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 13px}
+#page-profit .profit-summary-title h3{margin:0;font-size:19px}
+#page-profit .profit-summary-title p{margin:4px 0 0;color:var(--muted,#64748b);font-size:12px}
+#page-profit .profit-live{padding:7px 11px;border-radius:30px;background:#e9f8f1;color:#087f5b;font-size:11px;font-weight:800;white-space:nowrap}
+#page-profit .profit-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:22px}
+#page-profit .profit-stats .stat-card{position:relative;overflow:hidden;padding:19px;border:1px solid var(--line,#e5e7eb);border-radius:18px;background:var(--card,#fff);box-shadow:0 7px 20px rgba(20,35,55,.055)}
+#page-profit .profit-stats .stat-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#0b9870}
+#page-profit .profit-stats .stat-card:nth-child(2):before{background:#e09b32}
+#page-profit .profit-stats .stat-card:nth-child(3):before{background:#16865f}
+#page-profit .profit-stats .stat-label{font-size:12px;color:var(--muted,#64748b);font-weight:700}
+#page-profit .profit-stats .stat-value{font-size:clamp(18px,2.6vw,25px);font-weight:850;margin-top:9px;color:var(--text,#17212b);overflow-wrap:anywhere}
+#page-profit .profit-table-card{padding:19px;border:1px solid var(--line,#e5e7eb);border-radius:20px;background:var(--card,#fff);box-shadow:0 8px 24px rgba(20,35,55,.06)}
+#page-profit .profit-table-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+#page-profit .profit-table-head h3{margin:0;font-size:18px}
+#page-profit .profit-table-head p{margin:5px 0 0;font-size:12px;color:var(--muted,#64748b)}
+#page-profit .profit-table-tag{font-size:9px;letter-spacing:1px;font-weight:800;color:#087f5b;background:#e9f8f1;border-radius:30px;padding:7px 10px;white-space:nowrap}
+#page-profit .profit-table-wrap{border:1px solid var(--line,#e5e7eb);border-radius:14px;overflow-x:auto}
+#page-profit .profit-table{width:100%;min-width:620px;border-collapse:separate;border-spacing:0}
+#page-profit .profit-table th{background:#f1f7f4;color:#38574b;font-size:12px;padding:14px;text-align:left;white-space:nowrap}
+#page-profit .profit-table td{padding:14px;border-top:1px solid var(--line,#edf0f2);font-size:13px}
+#page-profit .profit-table tbody tr:hover{background:#f8fcf9}
+#page-profit .profit-table td:last-child{font-weight:800;color:#087f5b}
+#page-profit .profit-note{display:flex;align-items:flex-start;gap:12px;margin-top:15px;padding:14px 16px;border:1px solid #f0dfb9;border-radius:15px;background:#fffaf0;color:#72521c}
+#page-profit .profit-note>span{font-size:20px}
+#page-profit .profit-note strong{font-size:13px}
+#page-profit .profit-note p{margin:3px 0 0;font-size:12px;line-height:1.6}
+@media(max-width:650px){
+ #page-profit .profit-hero{padding:20px;border-radius:18px}
+ #page-profit .profit-hero h2{font-size:22px}
+ #page-profit .profit-hero-icon{width:58px;height:58px;font-size:29px}
+ #page-profit .profit-stats{grid-template-columns:1fr;gap:10px}
+ #page-profit .profit-stats .stat-card{padding:15px}
+ #page-profit .profit-table-card{padding:13px}
+ #page-profit .profit-table-head{align-items:flex-start}
+}
+
 </style>
 
 <style id="shop-profile-and-pdf-ui">
@@ -303,6 +433,20 @@ body.dark .feature-card,body.dark .customer-card,body.dark .profile-metric{backg
 .overdue-customer{border-color:#ef4444!important;box-shadow:0 0 0 1px rgba(239,68,68,.12);animation:debtPulse 1.5s ease-in-out infinite}
 
 .auth-gate{position:fixed;inset:0;z-index:99999;background:linear-gradient(135deg,#071b15,#102b25 55%,#173b31);display:flex;align-items:center;justify-content:center;padding:18px;overflow:auto;color:#f8fafc;font-family:Arial,sans-serif}.auth-box{width:min(440px,100%);background:#fff;color:#172033;border-radius:22px;padding:24px;box-shadow:0 25px 80px #0005}.auth-brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}.auth-logo{width:48px;height:48px;border-radius:14px;background:#168653;color:white;display:grid;place-items:center;font-weight:900;font-size:25px}.auth-box h2{margin:0 0 6px}.auth-box p{color:#64748b;font-size:14px;line-height:1.5}.auth-tabs{display:flex;gap:8px;margin:18px 0}.auth-tabs button{flex:1;background:#edf7f1;color:#166534;border:1px solid #d1fae5}.auth-tabs button.active{background:#168653;color:white}.auth-field{margin:12px 0}.auth-field label{display:block;font-size:13px;margin-bottom:6px;font-weight:700}.auth-field input{width:100%;box-sizing:border-box;padding:12px;border:1px solid #cbd5e1;border-radius:10px;font:inherit}.auth-primary,.auth-google{width:100%;margin-top:10px;padding:12px;border-radius:10px;font-weight:700}.auth-primary{background:#168653;color:#fff;border:0}.auth-google{background:white;color:#1f2937;border:1px solid #cbd5e1}.auth-msg{font-size:13px;margin-top:10px;min-height:18px;color:#b91c1c}.auth-hidden{display:none!important}.auth-account{font-size:12px;color:#64748b;overflow-wrap:anywhere;margin-top:10px}.cloud-status{font-size:12px;padding:5px 8px;border-radius:8px;background:#e8f7ee;color:#166534}
+
+/* BaleShop cart usability improvements */
+.cartline{grid-template-columns:minmax(0,1fr) 82px minmax(88px,auto) 34px;gap:10px;align-items:center;padding:13px 0}
+.cartline .cart-product-name{font-weight:800;overflow-wrap:anywhere}
+.cartline .cart-unit-price{font-size:12px;color:var(--muted);margin-top:4px}
+.cartline .cart-qty{width:100%;min-width:0;text-align:center;font-weight:700}
+.cartline .cart-line-total{font-weight:800;text-align:right;white-space:nowrap}
+.cart-heading{display:grid;grid-template-columns:minmax(0,1fr) 82px minmax(88px,auto) 34px;gap:10px;padding:8px 0;color:var(--muted);font-size:11px;font-weight:800;border-bottom:1px solid var(--line)}
+.cart-empty-state{padding:26px 14px;border:1px dashed var(--line);border-radius:14px;text-align:center;color:var(--muted);background:color-mix(in srgb,var(--card) 88%,#0f766e 12%)}
+.cart-summary-box{padding:12px 15px;border-radius:14px;background:#f5faf6;border:1px solid #e0ece3;margin-top:12px}
+.dark .cart-summary-box{background:#101d16;border-color:var(--line)}
+.cart-total-due{color:#087f5b;font-size:20px;font-weight:900}
+.password-status{font-size:13px;margin-top:10px;min-height:18px}
+@media(max-width:520px){.cart-heading{grid-template-columns:minmax(0,1fr) 62px 82px 30px;gap:6px}.cartline{grid-template-columns:minmax(0,1fr) 62px 82px 30px;gap:6px;font-size:12px}.cartline .cart-line-total{font-size:12px}.cartline .cart-qty{padding:7px 3px}.cart-summary-box{padding:10px}.cart-total-due{font-size:18px}}
 </style></head>
 <body>
 
@@ -323,15 +467,11 @@ body.dark .feature-card,body.dark .customer-card,body.dark .profile-metric{backg
 <div class="app" id="mainApp">
 <aside class="sidebar" id="sidebar">
 <div class="brand"><div class="logo">B</div><div><strong>BaleShop Pro</strong><small id="brandSub">የሱቅ አስተዳደር</small></div></div>
-<button class="navbtn" data-page="dashboard">▦ <span data-am="ዋና ገጽ" data-en="Dashboard">ዋና ገጽ</span></button>
-<button class="navbtn active" data-page="sales">🛒 <span data-am="ሽያጭ" data-en="Sales">ሽያጭ</span></button>
-<button class="navbtn" data-page="products">📦 <span data-am="ምርቶች" data-en="Products">ምርቶች</span></button>
-<button class="navbtn" data-page="customers">👥 <span data-am="ደንበኞች" data-en="Customers">ደንበኞች</span></button>
-<button class="navbtn" data-page="debts">🧾 <span data-am="ዕዳዎች" data-en="Debts">ዕዳዎች</span></button>
-<button class="navbtn" data-page="purchases">🚚 <span data-am="ግዢ / ወጪ" data-en="Purchases &amp; expenses">ግዢ / ወጪ</span></button>
-<button class="navbtn" data-page="reports">📈 <span data-am="ሪፖርቶች" data-en="Reports">ሪፖርቶች</span></button>
-<button class="navbtn" data-page="settings">⚙️ <span data-am="ቅንብሮች" data-en="Settings">ቅንብሮች</span></button>
-<div class="sidefoot">BaleShop Pro · Offline ready<br/><span id="savedLabel">ውሂብ በዚህ ስልክ ይቀመጣል</span></div>
+<button class="navbtn active" data-page="workspace-sales">🛒 <span>ሽያጭ</span></button>
+<button class="navbtn" data-page="workspace-customers">👥 <span>ደንበኞች</span></button>
+<button class="navbtn" data-page="workspace-reports">📈 <span>ሪፖርት</span></button>
+<button class="navbtn" data-page="profit">💰 <span>ትርፍ</span></button>
+<div class="sidefoot">BaleShop Pro<br/><span id="savedLabel">ውሂብ ተቀምጧል</span></div>
 </aside>
 <main class="main">
 <header class="topbar">
@@ -339,7 +479,33 @@ body.dark .feature-card,body.dark .customer-card,body.dark .profile-metric{backg
 <div class="topactions"><button class="secondary optional" id="langBtn">EN</button><button class="secondary" id="darkBtn" title="Dark mode">◐</button><span class="cloud-status" id="cloudStatus">☁️ ኦንላይን</span><button class="secondary small" id="accountBtn" type="button">አካውንት</button><button id="quickSale">+ <span data-am="አዲስ ሽያጭ" data-en="New sale">አዲስ ሽያጭ</span></button></div>
 </header>
 <div class="content">
+
+<section class="page active" id="page-workspace-sales">
+ <div class="workspace-intro"><h2>የሱቅ ስራዎች</h2><p>የሚፈልጉትን ክፍል ይምረጡ።</p></div>
+ <div class="menu-card-grid">
+  <button class="menu-card" onclick="showPage('dashboard')"><span class="menu-icon">📊</span><strong>ዳሽቦርድ</strong><small>የሱቅ አጠቃላይ ሁኔታ</small><b>ይክፈቱ →</b></button>
+  <button class="menu-card" onclick="showPage('sales')"><span class="menu-icon">🛒</span><strong>ሽያጭ</strong><small>አዲስ ሽያጭና የሽያጭ ታሪክ</small><b>ይክፈቱ →</b></button>
+  <button class="menu-card" onclick="showPage('products')"><span class="menu-icon">📦</span><strong>እቃዎች</strong><small>እቃ መጨመርና ክምችት</small><b>ይክፈቱ →</b></button>
+ </div>
+</section>
+<section class="page" id="page-workspace-customers">
+ <div class="workspace-intro"><h2>ደንበኞችና ግብይት</h2><p>ከታች ካሉት ካርዶች አንዱን ይጫኑ።</p></div>
+ <div class="menu-card-grid">
+  <button class="menu-card" onclick="showPage('customers')"><span class="menu-icon">👥</span><strong>ደንበኞች</strong><small>ደንበኛ መመዝገብና ዝርዝር</small><b>ይክፈቱ →</b></button>
+  <button class="menu-card" onclick="showPage('debts')"><span class="menu-icon">🧾</span><strong>ዕዳዎች</strong><small>የደንበኞች ዕዳ ክትትል</small><b>ይክፈቱ →</b></button>
+  <button class="menu-card" onclick="showPage('purchases')"><span class="menu-icon">🧺</span><strong>ግዢና ወጪ</strong><small>የግዢና ወጪ መዝገብ</small><b>ይክፈቱ →</b></button>
+ </div>
+</section>
+<section class="page" id="page-workspace-reports">
+ <div class="workspace-intro"><h2>ሪፖርትና ቅንብሮች</h2><p>ሪፖርት ወይም የሱቅ ቅንብር ለመክፈት ካርዱን ይጫኑ።</p></div>
+ <div class="menu-card-grid">
+  <button class="menu-card" onclick="showPage('reports')"><span class="menu-icon">📈</span><strong>ሪፖርት</strong><small>የሽያጭና የትርፍ ሪፖርት</small><b>ይክፈቱ →</b></button>
+  <button class="menu-card" onclick="showPage('settings')"><span class="menu-icon">⚙️</span><strong>ቅንብሮች</strong><small>የሱቅ መረጃና አካውንት</small><b>ይክፈቱ →</b></button>
+ </div>
+</section>
+
 <section class="page" id="page-dashboard">
+<button type="button" class="back-to-menu secondary" onclick="showPage('workspace-sales')">← ወደ ካርዶች ተመለስ</button>
 <div id="alerts"></div>
 <div class="cards" id="dashStats"></div>
 <div class="grid2">
@@ -349,6 +515,7 @@ body.dark .feature-card,body.dark .customer-card,body.dark .profile-metric{backg
 <div class="panel"><div class="panelhead"><h2 data-am="የቅርብ ሽያጮች" data-en="Recent sales">የቅርብ ሽያጮች</h2><button class="secondary small" onclick="showPage('sales')">ሁሉን እይ →</button></div><div id="recentSales"></div></div>
 </section>
 <section class="page" id="page-products">
+<button type="button" class="back-to-menu secondary" onclick="showPage('workspace-sales')">← ወደ ካርዶች ተመለስ</button>
 <div class="panel"><div class="panelhead"><div><h2 data-am="የምርት ዝርዝር" data-en="Product inventory">የምርት ዝርዝር</h2><div class="muted">ምርት መጨመር፣ ማስተካከል፣ መፈለግ</div></div><button id="addProductBtn">+ ምርት ጨምር</button></div>
 <div class="toolbar"><input class="search" id="productSearch" placeholder="በስም / ኮድ / ባርኮድ ፈልግ…"/><select id="stockFilter"><option value="all">ሁሉም ክምችት</option><option value="low">ዝቅተኛ ክምችት</option><option value="expired">ጊዜው ያለፈ / ቀርቧል</option></select></div>
 <div class="tablewrap" id="productsTable"></div>
@@ -379,7 +546,7 @@ body.dark .feature-card,body.dark .customer-card,body.dark .profile-metric{backg
 </div>
 <div class="panel feature-module hidden" id="salesCartPanel"><div class="panelhead"><h2>🛒 የሽያጭ ጋሪ</h2><button class="secondary small" id="clearCart">ጋሪ አጽዳ</button></div>
 <div class="field"><label>ደንበኛ</label><select id="saleCustomer"><option value="">ተራ ደንበኛ</option></select></div>
-<div id="cartItems" style="margin-top:12px"></div>
+<div class="cart-heading" aria-hidden="true"><span>ምርት / ዋጋ</span><span>ብዛት</span><span style="text-align:right">ድምር</span><span></span></div><div id="cartItems" style="margin-top:4px"></div>
 <div class="formgrid" style="margin-top:12px"><div class="field"><label>ቅናሽ</label><input id="saleDiscount" min="0" type="number" value="0"/></div><div class="field"><label>የተከፈለ ገንዘብ</label><input id="salePaid" min="0" step="0.01" type="number" value="0"/><small id="salePaidWarning" style="display:none;color:#c62828;font-weight:700;margin-top:5px"></small></div><div class="field wide"><label>የክፍያ አይነት</label><select id="saleMethod"><option value="cash">ጥሬ ገንዘብ</option><option value="credit">በዕዳ</option><option value="mobile">ሞባይል ክፍያ</option><option value="bank">ባንክ</option></select></div></div>
 <div id="cartTotals" style="margin-top:12px"></div><button id="completeSale" style="width:100%;margin-top:12px">ሽያጩን አስመዝግብ</button>
 </div>
@@ -387,16 +554,19 @@ body.dark .feature-card,body.dark .customer-card,body.dark .profile-metric{backg
 <div class="panel feature-module hidden" id="salesHistoryPanel"><div class="panelhead"><h2>የሽያጭ ታሪክ</h2><button class="secondary small" id="exportSalesBtn">CSV አውርድ</button></div><div class="toolbar"><input class="search" id="salesSearch" placeholder="ደረሰኝ / ደንበኛ ፈልግ…"/><input id="salesFrom" type="date"/><input id="salesTo" type="date"/></div><div class="tablewrap" id="salesTable"></div></div>
 </section>
 <section class="page" id="page-customers">
+<button type="button" class="back-to-menu secondary" onclick="showPage('workspace-customers')">← ወደ ካርዶች ተመለስ</button>
 <div class="panel"><div class="feature-cards" id="customerFeatureCards"><button class="feature-card active" data-feature-index="0" type="button"><span class="feature-icon">👥</span><strong>የደንበኛ ዝርዝር</strong><span class="feature-desc">ሁሉንም ደንበኞች እይ</span><span class="feature-arrow">↗</span></button><button class="feature-card" data-feature-index="1" type="button"><span class="feature-icon">⚠️</span><strong>የዕዳ ማስጠንቀቂያ</strong><span class="feature-desc">ከ36 ሰዓት በላይ የቆየ ዕዳ ፈልግ</span><span class="feature-arrow">↗</span></button></div><div class="panelhead"><div><h2>ደንበኞች</h2><div class="muted">የደንበኛ መረጃና የግዢ ታሪክ</div></div><button id="addCustomerBtn">+ ደንበኛ ጨምር</button></div>
 <div class="toolbar"><input class="search" id="customerSearch" placeholder="ደንበኛ ፈልግ…"/></div><div class="tablewrap" id="customersTable"></div>
 </div>
 <div class="panel hidden" id="customerProfilePanel"><div class="panelhead"><div><h2 id="customerProfileTitle">የደንበኛ መረጃ</h2><div class="muted">የግዢ፣ የዕዳና የክፍያ ታሪክ</div></div><button class="secondary small" onclick="closeCustomerProfile()" type="button">✕ ዝጋ</button></div><div id="customerProfileContent"></div></div><div class="panel hidden" id="customerFormPanel"><div class="panelhead"><h2 id="customerFormTitle">ደንበኛ ጨምር</h2><button class="secondary small" onclick="closeCustomerForm()">✕</button></div><form class="formgrid" id="customerForm"><input id="custId" type="hidden"/><div class="field wide"><label>የደንበኛ ሙሉ ስም *</label><input id="custName" placeholder="ስም አስገባ" required=""/></div><div class="field wide"><label>ስልክ ቁጥር (ካለ)</label><input id="custPhone" placeholder="09…" type="tel"/></div><details class="advanced wide"><summary>ተጨማሪ መረጃ (አማራጭ)</summary><div class="field" style="margin-top:10px"><label>አድራሻ / ማስታወሻ</label><input id="custNote" placeholder="አማራጭ"/></div></details><div class="field wide"><label>የደንበኛ ፎቶ (አማራጭ)</label><input accept="image/*" id="custPhoto" type="file"/><img alt="የደንበኛ ፎቶ" class="customer-photo-preview hidden" id="custPhotoPreview"/></div><div class="field wide"><label>የደንበኛ ክፍያ ደረጃ</label><select id="custRating"><option value="good">ጥሩ — በጊዜ ይከፍላል</option><option value="medium">መካከለኛ — አንዳንዴ ይዘገያል</option><option value="poor">ደካማ — ብዙ ጊዜ ይዘገያል</option></select></div><div class="row wide"><button>አስቀምጥ</button><button class="secondary" onclick="closeCustomerForm()" type="button">ሰርዝ</button></div></form></div>
 </section>
 <section class="page" id="page-debts">
+<button type="button" class="back-to-menu secondary" onclick="showPage('workspace-customers')">← ወደ ካርዶች ተመለስ</button>
 <div class="feature-cards" id="debtFeatureCards"><button class="feature-card active" data-feature-index="0" type="button"><span class="feature-icon">🧾</span><strong>የዕዳ መዝገብ</strong><span class="feature-desc">የዕዳ ሂሳቦችን እና ክፍያ መዝግብ</span><span class="feature-arrow">↗</span></button><button class="feature-card" data-feature-index="1" type="button"><span class="feature-icon">👥</span><strong>ዕዳ ያላቸው ደንበኞች</strong><span class="feature-desc">ቀሪ ዕዳ ያላቸውን በሙሉ ዘርዝር</span><span class="feature-arrow">↗</span></button></div><div class="cards" id="debtStats"></div>
 <div class="panel hidden" id="debtorsPanel"><div class="panelhead"><div><h2>ዕዳ ያላቸው ደንበኞች</h2><div class="muted">በቀሪ ዕዳ ከፍተኛ ወደ ዝቅተኛ ተደርድረዋል</div></div></div><div class="tablewrap" id="debtorsTable"></div></div><div class="panel" id="debtsLedgerPanel"><div class="panelhead"><h2>የዕዳ ዝርዝር</h2><span class="muted">ከፊል ክፍያ ይደገፋል</span></div><div class="tablewrap" id="debtsTable"></div></div>
 </section>
-<section class="page" id="page-purchases"><div class="feature-cards" id="purchaseFeatureCards"><button class="feature-card active" data-feature-index="0" type="button"><span class="feature-icon">📦</span><strong>ግዢ አስመዝግብ</strong><span class="feature-desc">ምርት ግዢና ክምችት ጨምር</span><span class="feature-arrow">↗</span></button><button class="feature-card" data-feature-index="1" type="button"><span class="feature-icon">💸</span><strong>ወጪ መመዝገብ</strong><span class="feature-desc">የሱቅ ወጪ መዝግብ</span><span class="feature-arrow">↗</span></button><button class="feature-card" data-feature-index="2" type="button"><span class="feature-icon">🧾</span><strong>የግዢ ታሪክ</strong><span class="feature-desc">የተመዘገቡ ግዢዎችን እይ</span><span class="feature-arrow">↗</span></button><button class="feature-card" data-feature-index="3" type="button"><span class="feature-icon">📉</span><strong>የወጪ ታሪክ</strong><span class="feature-desc">የወጪ መዝገቦችን እይ</span><span class="feature-arrow">↗</span></button></div>
+<section class="page" id="page-purchases">
+<button type="button" class="back-to-menu secondary" onclick="showPage('workspace-customers')">← ወደ ካርዶች ተመለስ</button><div class="feature-cards" id="purchaseFeatureCards"><button class="feature-card active" data-feature-index="0" type="button"><span class="feature-icon">📦</span><strong>ግዢ አስመዝግብ</strong><span class="feature-desc">ምርት ግዢና ክምችት ጨምር</span><span class="feature-arrow">↗</span></button><button class="feature-card" data-feature-index="1" type="button"><span class="feature-icon">💸</span><strong>ወጪ መመዝገብ</strong><span class="feature-desc">የሱቅ ወጪ መዝግብ</span><span class="feature-arrow">↗</span></button><button class="feature-card" data-feature-index="2" type="button"><span class="feature-icon">🧾</span><strong>የግዢ ታሪክ</strong><span class="feature-desc">የተመዘገቡ ግዢዎችን እይ</span><span class="feature-arrow">↗</span></button><button class="feature-card" data-feature-index="3" type="button"><span class="feature-icon">📉</span><strong>የወጪ ታሪክ</strong><span class="feature-desc">የወጪ መዝገቦችን እይ</span><span class="feature-arrow">↗</span></button></div>
 <div class="grid2">
 <div class="panel feature-module active-module" id="purchaseEntryPanel"><div class="panelhead"><h2>የምርት ግዢ አስመዝግብ</h2></div><form class="formgrid" id="purchaseForm">
 <div class="field wide"><label>ምርት *</label><select id="purchaseProduct" required=""></select><small class="muted" id="purchaseUnitHint">የመለኪያ አይነት ከምርቱ ይመጣል።</small></div><div class="field"><label>የገዛኸው ብዛት *</label><input id="purchaseQty" min=".01" required="" step=".01" type="number"/></div><div class="field"><label>ጠቅላላ የግዢ ዋጋ (ብር) *</label><input id="purchaseCost" min="0" required="" step=".01" type="number" placeholder="ምሳሌ፦ 10000"/></div>
@@ -410,16 +580,36 @@ body.dark .feature-card,body.dark .customer-card,body.dark .profile-metric{backg
 <div class="panel feature-module hidden" id="expenseHistoryPanel"><div class="panelhead"><h2>የወጪ ታሪክ</h2></div><div class="tablewrap" id="expensesTable"></div></div>
 </section>
 <section class="page" id="page-reports">
+<button type="button" class="back-to-menu secondary" onclick="showPage('workspace-reports')">← ወደ ካርዶች ተመለስ</button>
 <div class="panel"><div class="feature-cards" id="reportFeatureCards"><button class="feature-card active" data-feature-index="0" type="button"><span class="feature-icon">📊</span><strong>የሽያጭ ሪፖርት</strong><span class="feature-desc">ጠቅላላ ሽያጭ፣ ትርፍና ወጪ</span><span class="feature-arrow">↗</span></button><button class="feature-card" data-feature-index="1" type="button"><span class="feature-icon">🧮</span><strong>ተጨማሪ ሂሳብ</strong><span class="feature-desc">የተከፈለ፣ ቀሪ ዕዳና ግዢ</span><span class="feature-arrow">↗</span></button><button class="feature-card" data-feature-index="2" type="button"><span class="feature-icon">📋</span><strong>የሽያጭ ዝርዝር</strong><span class="feature-desc">የደረሰኝ ዝርዝር እይ</span><span class="feature-arrow">↗</span></button></div><div class="panelhead"><div><h2>የሽያጭና ትርፍ ሪፖርት</h2><div class="muted">በቀን ክልል ውስጥ ያሉ መዝገቦች</div></div><button class="secondary" id="exportReportBtn">📄 PDF አውርድ</button></div>
 <p class="simplehint">ቀኖችን ምረጥ፤ ከዚያ ሪፖርቱን አሳይ ተጫን።</p><div class="toolbar"><label>ከ <input id="reportFrom" type="date"/></label><label>እስከ <input id="reportTo" type="date"/></label><button id="applyReport">ሪፖርት አሳይ</button></div><div class="cards report-main" id="reportStats"></div><details class="advanced report-details"><summary>ተጨማሪ ሂሳብ እና የሽያጭ ዝርዝር</summary><div class="cards hidden" id="reportExtraStats"></div><div class="tablewrap hidden" id="reportTable"></div></details>
 </div>
 </section>
 <section class="page" id="page-settings">
+<button type="button" class="back-to-menu secondary" onclick="showPage('workspace-reports')">← ወደ ካርዶች ተመለስ</button>
 <div class="panel shop-summary-card" id="shopSummaryCard"><div class="shop-summary-main"><img id="shopSummaryLogo" alt="የሱቅ ሎጎ"/><div><div class="muted">የእኔ ሱቅ</div><h2 id="shopSummaryName">BaleShop</h2><div class="shop-summary-meta" id="shopSummaryMeta">የሱቅ መረጃ እዚህ ይታያል</div></div></div><button type="button" class="secondary small" id="toggleShopProfileEdit">✏️ ፕሮፋይል አስተካክል</button></div>
 <div class="settingsgrid">
 <div class="panel hidden" id="shopProfileEditPanel"><div class="panelhead"><h2>የሱቅ ፕሮፋይል ማስተካከያ</h2></div><form class="formgrid" id="shopForm"><div class="field wide"><label>የሱቅ ፎቶ / ሎጎ</label><div class="shop-profile-box"><img id="shopLogoPreview" alt="የሱቅ ፎቶ"/><div><input accept="image/*" id="shopLogoFile" type="file"/><button class="secondary small" id="removeShopLogo" type="button">ፎቶ አስወግድ</button><small class="muted">ሎጎ ወይም የሱቅ ፎቶ ምረጥ።</small></div></div></div><div class="field wide"><label>የሱቅ ስም *</label><input id="shopName" value="BaleShop" required/></div><div class="field"><label>ስልክ ቁጥር</label><input id="shopContact" placeholder="09…"/></div><div class="field"><label>አድራሻ / ከተማ</label><input id="shopAddress" placeholder="ምሳሌ፦ ጅማ"/></div><div class="field"><label>የባለቤት ስም</label><input id="shopOwner" placeholder="የባለቤቱ ስም"/></div><div class="field"><label>የግብር ቁጥር (TIN)</label><input id="shopTin" placeholder="ካለ"/></div><div class="field wide"><label>የደረሰኝ መልዕክት</label><input id="receiptNote" value="እናመሰግናለን!"/></div><button class="wide">የሱቅ ፕሮፋይል አስቀምጥ</button></form></div>
-<div class="panel" id="dataSecurityPanel"><div class="panelhead"><h2>🛡️ የውሂብ ደህንነት</h2></div><p class="muted">ውሂቡ በዚህ ስልክ ይቀመጣል፤ ከአካውንት ጋር ከገባህ ወደ Firestore ይመሳሰላል።</p><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"/><div class="row"><button id="exportAllPDFBtn">📄 ሁሉንም ውሂብ PDF</button></div><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"/><button class="danger" id="resetBtn">ሁሉንም ውሂብ ሰርዝ</button></div>
+<div class="panel" id="passwordSettingsPanel"><div class="panelhead"><h2>🔐 የይለፍ ቃል ማስተካከያ</h2></div><p class="simplehint">በኢሜይልና ይለፍ ቃል የተመዘገብክ ከሆነ አዲስ ይለፍ ቃል እዚህ መፍጠር ትችላለህ። Google ተጠቃሚ ከሆንክ የGoogle መለያህን ተጠቀም።</p><form id="changePasswordForm"><div class="field"><label for="currentPassword">የአሁኑ ይለፍ ቃል</label><input id="currentPassword" type="password" autocomplete="current-password" minlength="6" required></div><div class="field" style="margin-top:10px"><label for="newPassword">አዲስ ይለፍ ቃል</label><input id="newPassword" type="password" autocomplete="new-password" minlength="6" required></div><div class="field" style="margin-top:10px"><label for="confirmNewPassword">አዲሱን ይለፍ ቃል ድገም</label><input id="confirmNewPassword" type="password" autocomplete="new-password" minlength="6" required></div><button type="submit" id="changePasswordBtn" style="margin-top:12px;width:100%">ይለፍ ቃሉን ቀይር</button><div id="passwordChangeStatus" class="password-status" role="status" aria-live="polite"></div></form><hr style="border:0;border-top:1px solid var(--line);margin:18px 0"><button type="button" class="secondary" id="settingsPasswordReset" style="width:100%">📧 የይለፍ ቃል መመለሻ ኢሜይል ላክ</button></div><div class="panel" id="dataSecurityPanel"><div class="panelhead"><h2>🛡️ የውሂብ ደህንነት</h2></div><p class="muted">ውሂቡ በዚህ ስልክ ይቀመጣል፤ ከአካውንት ጋር ከገባህ ወደ Firestore ይመሳሰላል።</p><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"/><div class="row"><button id="exportAllPDFBtn">📄 ሁሉንም ውሂብ PDF</button></div><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"/><button class="danger" id="resetBtn">ሁሉንም ውሂብ ሰርዝ</button></div>
 </div>
+</section>
+
+<section class="page" id="page-profit">
+  <div class="profit-hero">
+    <div class="profit-hero-copy">
+      <span class="profit-eyebrow">BALESHOP • FINANCE</span>
+      <h2>💰 የትርፍ ማዕከል</h2>
+      <p>የእያንዳንዱን እቃ ገቢ፣ ወጪና ትርፍ በቀላሉ ይከታተሉ።</p>
+    </div>
+    <div class="profit-hero-icon">📈</div>
+  </div>
+  <div class="profit-summary-title"><div><h3>አጠቃላይ ሂሳብ</h3><p>ከተመዘገቡ ሽያጮች የተሰላ</p></div><span class="profit-live">● የተዘመነ</span></div>
+  <div class="stats-grid profit-stats" id="productProfitSummary"></div>
+  <div class="card profit-table-card">
+    <div class="card-head profit-table-head"><div><h3>📦 የእቃ ትርፍ ዝርዝር</h3><p>እቃዎችን በተሸጡት ብዛት እና በተገኘው ትርፍ ይመልከቱ።</p></div><span class="profit-table-tag">PRODUCT REPORT</span></div>
+    <div class="table-wrap profit-table-wrap"><table class="profit-table"><thead><tr><th>እቃ</th><th>የተሸጠ ብዛት</th><th>ገቢ</th><th>ወጪ</th><th>ትርፍ</th></tr></thead><tbody id="productProfitRows"></tbody></table></div>
+  </div>
+  <div class="profit-note"><span>💡</span><div><strong>ማስታወሻ</strong><p>የግዢ ዋጋ በሽያጭ መዝገብ ውስጥ ካልተቀመጠ ትርፉ ግምታዊ ሊሆን ይችላል። በ* የተመለከቱ መረጃዎችን ያረጋግጡ።</p></div></div>
 </section>
 <section class="page" id="page-receipt"><div class="panel receipt" id="receiptContent"></div><div class="no-print row" style="justify-content:center"><button onclick="printReceipt()">🖨 ደረሰኝ አትም</button><button class="secondary" onclick="goBackPage()">← ወደ ኋላ</button><span class="muted">የተገናኘ ፕሪንተርን ከPrint ምናሌ ይምረጡ።</span></div></section>
 </div>
@@ -463,6 +653,11 @@ async function saveCloudData(){if(!currentUser||!cloudDB||loadingCloud)return;tr
 async function enterAccount(user){currentUser=user;loadingCloud=true;cloudReady=false;document.getElementById('authGate').classList.add('auth-hidden');document.getElementById('mainApp').classList.remove('auth-hidden');document.getElementById('accountBtn').textContent='ውጣ';setCloudStatus('☁️ ውሂብ በመፈለግ ላይ…');const userKey=KEY+'_'+user.uid;try{const localUserData=localStorage.getItem(userKey);if(localUserData)db=JSON.parse(localUserData);else{db=emptyData();if(!localStorage.getItem(KEY+'_legacyMigrated')&&localStorage.getItem(KEY)){try{db=JSON.parse(localStorage.getItem(KEY))||emptyData()}catch(e){}localStorage.setItem(KEY+'_legacyMigrated','1')}}const ref=cloudDB.collection('users').doc(user.uid).collection('appData').doc('main');const snap=await ref.get();if(snap.exists&&snap.data()&&snap.data().data){const cloudData=snap.data().data;const base=emptyData();db={...base,...cloudData,products:Array.isArray(cloudData.products)?cloudData.products:[],customers:Array.isArray(cloudData.customers)?cloudData.customers:[],sales:Array.isArray(cloudData.sales)?cloudData.sales:[],debts:Array.isArray(cloudData.debts)?cloudData.debts:[],payments:Array.isArray(cloudData.payments)?cloudData.payments:[],purchases:Array.isArray(cloudData.purchases)?cloudData.purchases:[],expenses:Array.isArray(cloudData.expenses)?cloudData.expenses:[],settings:{...base.settings,...(cloudData.settings||{})}};localStorage.setItem(userKey,JSON.stringify(db));localStorage.setItem(KEY,JSON.stringify(db));setCloudStatus('☁️ ውሂብ ተገኝቷል')}else{await ref.set({data:db,updatedAt:firebase.firestore.FieldValue.serverTimestamp(),ownerUid:user.uid});localStorage.setItem(userKey,JSON.stringify(db));setCloudStatus('☁️ አዲስ የሱቅ ውሂብ ተፈጥሯል')}}catch(e){console.error('Cloud load failed',e);setCloudStatus('⚠️ የውሂብ ግንኙነት ችግር');toast('የዳታቤዝ መዳረሻ አልተሳካም፤ Firestore Rules አረጋግጥ')}finally{loadingCloud=false;cloudReady=true;renderAll();renderSaleProducts();renderCart()}}
 function leaveAccount(){currentUser=null;cloudReady=false;document.getElementById('authGate').classList.remove('auth-hidden');document.getElementById('mainApp').classList.add('auth-hidden');document.getElementById('accountBtn').textContent='አካውንት';setCloudStatus('☁️ ኦንላይን');authMessage('')}
 function initAuthUI(){document.getElementById('authLoginTab').onclick=()=>setAuthMode('login');document.getElementById('authSignupTab').onclick=()=>setAuthMode('signup');document.getElementById('authForm').addEventListener('submit',async e=>{e.preventDefault();if(!auth){authMessage('Firebase አልተገናኘም፤ ኢንተርኔት አረጋግጥ');return}const email=document.getElementById('authEmail').value.trim(),password=document.getElementById('authPassword').value;const btn=document.getElementById('authSubmit');btn.disabled=true;authMessage('በመግባት ላይ…',false);try{const cred=authMode==='signup'?await auth.createUserWithEmailAndPassword(email,password):await auth.signInWithEmailAndPassword(email,password);await enterAccount(cred.user)}catch(e){authMessage(authErrorText(e.code))}finally{btn.disabled=false}});document.getElementById('authGoogle').onclick=async()=>{try{if(!auth)throw new Error('Firebase አልተገናኘም');const provider=new firebase.auth.GoogleAuthProvider();await auth.signInWithPopup(provider)}catch(e){authMessage(authErrorText(e.code)||e.message)}};document.getElementById('authForgot').onclick=async()=>{const email=document.getElementById('authEmail').value.trim();if(!email){authMessage('መጀመሪያ ኢሜይልህን አስገባ');return}try{await auth.sendPasswordResetEmail(email);authMessage('የይለፍ ቃል መመለሻ ኢሜይል ተልኳል።',false)}catch(e){authMessage(authErrorText(e.code))}};document.getElementById('accountBtn').onclick=async()=>{if(currentUser){if(confirm('ከአካውንትህ መውጣት ትፈልጋለህ?')){try{await auth.signOut()}catch(e){toast('መውጣት አልተሳካም')}}}else{document.getElementById('authGate').classList.remove('auth-hidden')}};if(auth)auth.onAuthStateChanged(async user=>{if(user){if(currentUser&&currentUser.uid===user.uid)return;await enterAccount(user)}else{leaveAccount()}})}
+
+// Password management: Firebase requires recent sign-in for password updates.
+function passwordStatus(message,isError=true){const el=document.getElementById('passwordChangeStatus');if(el){el.textContent=message;el.style.color=isError?'#b91c1c':'#166534'}}
+function initPasswordSettings(){const form=document.getElementById('changePasswordForm');if(form)form.addEventListener('submit',async e=>{e.preventDefault();const user=auth&&auth.currentUser;const current=document.getElementById('currentPassword').value;const next=document.getElementById('newPassword').value;const confirmNext=document.getElementById('confirmNewPassword').value;const btn=document.getElementById('changePasswordBtn');if(!user){passwordStatus('መጀመሪያ ወደ አካውንትህ ግባ።');return}if(next.length<6){passwordStatus('አዲሱ ይለፍ ቃል ቢያንስ 6 ቁምፊ ይኑረው።');return}if(next!==confirmNext){passwordStatus('አዲሱ ይለፍ ቃል ሁለቱ አይመሳሰሉም።');return}const emailProvider=(user.providerData||[]).some(p=>p.providerId==='password');if(!emailProvider){passwordStatus('ይህ አካውንት Google በመጠቀም የተገናኘ ይመስላል። የGoogle መለያህን የይለፍ ቃል በGoogle ውስጥ ቀይር።');return}btn.disabled=true;passwordStatus('በማስተካከል ላይ…',false);try{const credential=firebase.auth.EmailAuthProvider.credential(user.email,current);await user.reauthenticateWithCredential(credential);await user.updatePassword(next);form.reset();passwordStatus('ይለፍ ቃሉ በተሳካ ሁኔታ ተቀይሯል።',false)}catch(err){const messages={'auth/wrong-password':'የአሁኑ ይለፍ ቃል ትክክል አይደለም።','auth/invalid-credential':'የአሁኑ ይለፍ ቃል ትክክል አይደለም።','auth/weak-password':'አዲሱ ይለፍ ቃል ጠንካራ አይደለም፤ ቢያንስ 6 ቁምፊ ይጠቀም።','auth/requires-recent-login':'ከአካውንትህ ውጣና እንደገና ግባ፤ ከዚያ ሞክር።','auth/network-request-failed':'ኢንተርኔትህን አረጋግጥ።'};passwordStatus(messages[err.code]||'ይለፍ ቃሉን መቀየር አልተቻለም። '+(err.code||''))}finally{btn.disabled=false}});const reset=document.getElementById('settingsPasswordReset');if(reset)reset.addEventListener('click',async()=>{const user=auth&&auth.currentUser;if(!user||!user.email){passwordStatus('የኢሜይል አካውንት አልተገኘም።');return}try{await auth.sendPasswordResetEmail(user.email);passwordStatus('የይለፍ ቃል መመለሻ ኢሜይል ተልኳል።',false)}catch(err){passwordStatus(authErrorText(err.code))}})}
+
 function authErrorText(code){const m={'auth/email-already-in-use':'ይህ ኢሜይል አስቀድሞ ተመዝግቧል።','auth/invalid-email':'የኢሜይል አድራሻው ትክክል አይደለም።','auth/weak-password':'ይለፍ ቃሉ ቢያንስ 6 ቁምፊዎች ይኑሩት።','auth/user-not-found':'ይህ አካውንት አልተገኘም።','auth/wrong-password':'ይለፍ ቃሉ ትክክል አይደለም።','auth/invalid-credential':'ኢሜይሉ ወይም ይለፍ ቃሉ ትክክል አይደለም።','auth/popup-blocked':'Browser የGoogle መግቢያ popup ከልክሏል።','auth/popup-closed-by-user':'የመግቢያ መስኮቱ ተዘግቷል።','auth/network-request-failed':'የኢንተርኔት ግንኙነትን አረጋግጥ።','auth/operation-not-allowed':'ይህ የመግቢያ ዘዴ በFirebase ውስጥ አልተከፈተም።'};return m[code]||('ስህተት፦ '+(code||'እንደገና ሞክር'))}
 
 function id(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
@@ -473,9 +668,36 @@ function fmtDate(d){if(!d)return '—';return new Date(d).toLocaleDateString(db.
 function toast(t){let el=document.getElementById('toast');el.textContent=t;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2400)}
 const titles={dashboard:'ዋና ገጽ',sales:'ሽያጭ',products:'ምርቶች',customers:'ደንበኞች',debts:'ዕዳዎች',purchases:'ግዢ / ወጪ',reports:'ሪፖርቶች',settings:'ቅንብሮች',receipt:'ደረሰኝ'};
 let activePage='dashboard',pageTrail=['dashboard'];
-function showPage(p,fromPop=false){if(!document.getElementById('page-'+p))p='dashboard';if(!fromPop&&p!==activePage){pageTrail.push(p);if(pageTrail.length>40)pageTrail.shift();try{history.pushState({baleshopPage:p},'',`#${p}`)}catch(e){}}activePage=p;document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id==='page-'+p));document.querySelectorAll('.navbtn').forEach(x=>x.classList.toggle('active',x.dataset.page===p));document.getElementById('pageTitle').textContent=titles[p]||p;document.getElementById('sidebar').classList.remove('open');if(p!=='receipt')renderAll();window.scrollTo(0,0)}
+function showPage(p,fromPop=false){
+const pageToWorkspace={
+ dashboard:'workspace-sales',sales:'workspace-sales',products:'workspace-sales',
+ customers:'workspace-customers',debts:'workspace-customers',purchases:'workspace-customers',
+ reports:'workspace-reports',settings:'workspace-reports'
+};
+if(!document.getElementById('page-'+p))p='workspace-sales';
+if(!fromPop&&p!==activePage){
+ pageTrail.push(p);if(pageTrail.length>40)pageTrail.shift();
+ try{history.pushState({baleshopPage:p},'',`#${p}`)}catch(e){}
+}
+activePage=p;
+document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id==='page-'+p));
+const navWorkspace=pageToWorkspace[p]||p;
+document.querySelectorAll('.navbtn').forEach(x=>x.classList.toggle('active',x.dataset.page===navWorkspace));
+const labels={
+ 'workspace-sales':'የሱቅ ስራዎች','workspace-customers':'ደንበኞችና ግብይት','workspace-reports':'ሪፖርትና ቅንብሮች',
+ dashboard:'ዳሽቦርድ',sales:'ሽያጭ',products:'እቃዎች',customers:'ደንበኞች',
+ debts:'ዕዳዎች',purchases:'ግዢና ወጪ',reports:'ሪፖርት',settings:'ቅንብሮች',
+ profit:'ትርፍ',receipt:'ደረሰኝ'
+};
+document.getElementById('pageTitle').textContent=labels[p]||p;
+document.getElementById('sidebar').classList.remove('open');
+if(p!=='receipt')renderAll();
+if(p==='profit'&&typeof renderProductProfitPage==='function')renderProductProfitPage();
+window.scrollTo(0,0);
+}
+
 function goBackPage(){if(document.getElementById('sidebar').classList.contains('open')){document.getElementById('sidebar').classList.remove('open');return}if(history.state&&history.state.baleshopPage){history.back();return}let previous=pageTrail.length>1?pageTrail[pageTrail.length-2]:'sales';pageTrail.pop();showPage(previous,true)}
-history.replaceState({baleshopPage:'dashboard'},'','#dashboard');
+history.replaceState({baleshopPage:'workspace-sales'},'','#workspace-sales');
 window.addEventListener('popstate',e=>{if(document.getElementById('sidebar').classList.contains('open')){document.getElementById('sidebar').classList.remove('open');return}let p=e.state&&e.state.baleshopPage;if(p){if(pageTrail.length>1)pageTrail.pop();showPage(p,true)}else showPage('dashboard',true)});
 window.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('sidebar').classList.contains('open'))document.getElementById('sidebar').classList.remove('open')});
 document.addEventListener('click',e=>{const side=document.getElementById('sidebar');if(side.classList.contains('open')&&!side.contains(e.target)&&!e.target.closest('#menuBtn'))side.classList.remove('open')});
@@ -484,7 +706,7 @@ document.getElementById('menuBtn').onclick=()=>document.getElementById('sidebar'
 document.getElementById('quickSale').onclick=()=>showPage('sales');
 document.getElementById('darkBtn').onclick=()=>{db.dark=!db.dark;document.body.classList.toggle('dark',db.dark);save()};
 document.getElementById('langBtn').onclick=()=>{db.lang=db.lang==='am'?'en':'am';save();document.documentElement.lang=db.lang;document.querySelectorAll('[data-am]').forEach(e=>e.textContent=e.dataset[db.lang]);document.getElementById('langBtn').textContent=db.lang==='am'?'EN':'አማ';renderAll()};
-document.getElementById('langBtn').textContent=db.lang==='am'?'EN':'አማ';renderAll();updatePurchasePricePreview();initAuthUI();
+document.getElementById('langBtn').textContent=db.lang==='am'?'EN':'አማ';renderAll();updatePurchasePricePreview();initAuthUI();initPasswordSettings();
 function renderAll(){document.body.classList.toggle('dark',!!db.dark);document.getElementById('todayText').textContent=new Date().toLocaleDateString(db.lang==='am'?'am-ET':'en-GB',{weekday:'long',year:'numeric',month:'long',day:'numeric'});document.getElementById('shopName').value=db.settings.shopName||'BaleShop';document.getElementById('shopContact').value=db.settings.shopContact||'';document.getElementById('receiptNote').value=db.settings.receiptNote||'';document.getElementById('shopAddress').value=db.settings.shopAddress||'';document.getElementById('shopOwner').value=db.settings.shopOwner||'';document.getElementById('shopTin').value=db.settings.shopTin||'';setShopLogoPreview(db.settings.shopLogo||'');renderShopSummary();renderDashboard();renderProducts();renderCustomers();renderSales();renderDebts();renderPurchases();renderReports();fillSelects()}
 function stat(label,value,note=''){return `<div class="stat"><div class="label">${label}</div><div class="value">${value}</div><div class="note">${note}</div></div>`}
 function renderDashboard(){let today=dateStr(),todaySales=db.sales.filter(s=>s.date.slice(0,10)===today),rev=todaySales.reduce((a,s)=>a+s.total,0),grossProfit=todaySales.reduce((a,s)=>a+(Number(s.profit)||0),0),todayExpenses=db.expenses.filter(x=>x.date.slice(0,10)===today).reduce((a,x)=>a+(Number(x.amount)||0),0),netProfit=grossProfit-todayExpenses,outstanding=db.debts.reduce((a,d)=>a+(Number(d.remaining)||0),0),stockValue=db.products.reduce((a,p)=>a+(Number(p.stock)||0)*(Number(p.cost)||0),0);
@@ -538,7 +760,7 @@ input.setAttribute('aria-invalid',message?'true':'false');
 if(showToast && message) toast(message.replace('⚠️ ',''));
 return !message;
 }
-function renderCart(){document.getElementById('cartItems').innerHTML=cart.length?cart.map((it,i)=>`<div class="cartline"><div><b>${esc(it.name)}</b><div class="muted">${money(it.price)} / ${unitLabel(db.products.find(p=>p.id===it.productId)?.unit)}</div></div><input type="number" min=".01" step=".01" value="${it.qty}" onchange="changeQty(${i},this.value)"><b>${money(it.qty*it.price)}</b><button class="danger small" onclick="removeCart(${i})">×</button></div>`).join(''):'<div class="empty">ጋሪው ባዶ ነው</div>';let sub=cart.reduce((a,x)=>a+x.qty*x.price,0),disc=Math.max(0,+document.getElementById('saleDiscount').value||0),total=Math.max(0,sub-disc),paid=Math.min(total,Math.max(0,+document.getElementById('salePaid').value||0));document.getElementById('cartTotals').innerHTML=`<div class="totalrow"><span>ድምር</span><b>${money(sub)}</b></div><div class="totalrow"><span>ቅናሽ</span><b>− ${money(disc)}</b></div><div class="totalrow final"><span>ጠቅላላ</span><b>${money(total)}</b></div><div class="totalrow"><span>የተከፈለ</span><b>${money(paid)}</b></div><div class="totalrow"><span>ቀሪ ዕዳ</span><b>${money(Math.max(0,total-paid))}</b></div>`;validateSalePaid()}
+function renderCart(){const itemsEl=document.getElementById('cartItems');itemsEl.innerHTML=cart.length?cart.map((it,i)=>{const product=db.products.find(p=>p.id===it.productId);return `<div class="cartline"><div><div class="cart-product-name">${esc(it.name)}</div><div class="cart-unit-price">${money(it.price)} / ${unitLabel(product?.unit)}</div></div><input class="cart-qty" aria-label="${esc(it.name)} ብዛት" type="number" min=".01" step=".01" value="${it.qty}" onchange="changeQty(${i},this.value)"><div class="cart-line-total">${money(it.qty*it.price)}</div><button class="danger small" type="button" aria-label="${esc(it.name)} ከጋሪ አስወግድ" title="አስወግድ" onclick="removeCart(${i})">×</button></div>`}).join(''):'<div class="cart-empty-state"><div style="font-size:28px;margin-bottom:6px">🛒</div><b>ጋሪው ባዶ ነው</b><div class="muted" style="margin-top:5px">ከሽያጭ ፍጠር ገጽ ምርት ምረጥና ወደ ጋሪ ጨምር።</div></div>';let sub=cart.reduce((a,x)=>a+x.qty*x.price,0),disc=Math.max(0,+document.getElementById('saleDiscount').value||0),total=Math.max(0,sub-disc),paid=Math.min(total,Math.max(0,+document.getElementById('salePaid').value||0));document.getElementById('cartTotals').innerHTML=`<div class="cart-summary-box"><div class="totalrow"><span>የምርቶች ድምር</span><b>${money(sub)}</b></div><div class="totalrow"><span>ቅናሽ</span><b>− ${money(disc)}</b></div><div class="totalrow final"><span>ጠቅላላ ክፍያ</span><b class="cart-total-due">${money(total)}</b></div><div class="totalrow"><span>የተከፈለ</span><b>${money(paid)}</b></div><div class="totalrow"><span>ቀሪ ዕዳ</span><b>${money(Math.max(0,total-paid))}</b></div></div>`;validateSalePaid()}
 function changeQty(i,v){let q=+v,p=db.products.find(x=>x.id===cart[i].productId);if(!q||q<=0){removeCart(i);return}if(q>p.stock){toast('ከክምችት በላይ ነው');q=p.stock}cart[i].qty=q;renderCart()}
 function removeCart(i){cart.splice(i,1);renderCart()}
 document.getElementById('saleProductSearch').oninput=renderSaleProducts;document.getElementById('saleDiscount').oninput=renderCart;document.getElementById('salePaid').oninput=()=>{renderCart();validateSalePaid()};
@@ -667,6 +889,34 @@ bindFeatureCards('customerFeatureCards',[],i=>{if(i===0){renderCustomers();docum
 bindFeatureCards('reportFeatureCards',[],i=>{const summary=document.getElementById('reportStats'),extra=document.getElementById('reportExtraStats'),tbl=document.getElementById('reportTable'),details=document.querySelector('#page-reports .report-details');summary.classList.toggle('hidden',i!==0);extra.classList.toggle('hidden',i!==1);tbl.classList.toggle('hidden',i!==2);if(details)details.open=i!==0; if(i===2&&details)details.open=true;});
 // Start on Sales as requested and render new components using the existing local data.
 renderAll();renderSaleProducts();renderCart();showPage('sales');
+
+function renderProductProfitPage(){
+ const products=Array.isArray(db.products)?db.products:[];
+ const sales=Array.isArray(db.sales)?db.sales:[];
+ const rows=products.map(p=>{
+   let qty=0,revenue=0,cost=0,missingCost=false;
+   sales.forEach(s=>(s.items||[]).forEach(it=>{
+     if(String(it.productId||it.id)===String(p.id)){
+       const q=Number(it.qty||it.quantity||0), price=Number(it.price||it.salePrice||0);
+       const unitCost=Number(it.cost??it.buyPrice??p.buyPrice??p.cost??NaN);
+       qty+=q;revenue+=q*price;
+       if(Number.isFinite(unitCost))cost+=q*unitCost;else missingCost=true;
+     }
+   }));
+   return {name:p.name||'—',qty,revenue,cost,profit:revenue-cost,missingCost};
+ }).filter(x=>x.qty>0);
+ const totalRevenue=rows.reduce((a,x)=>a+x.revenue,0);
+ const totalCost=rows.reduce((a,x)=>a+x.cost,0);
+ const totalProfit=rows.reduce((a,x)=>a+x.profit,0);
+ const money=n=>(Number(n)||0).toLocaleString('en-US',{maximumFractionDigits:2})+' ብር';
+ const summary=document.getElementById('productProfitSummary');
+ if(summary)summary.innerHTML=[
+  ['ጠቅላላ ገቢ',money(totalRevenue)],['ጠቅላላ ወጪ',money(totalCost)],['ጠቅላላ ትርፍ',money(totalProfit)]
+ ].map(x=>`<div class="stat-card"><div class="stat-label">${x[0]}</div><div class="stat-value">${x[1]}</div></div>`).join('');
+ const body=document.getElementById('productProfitRows');
+ if(body)body.innerHTML=rows.length?rows.map(x=>`<tr><td>${typeof esc==='function'?esc(x.name):x.name}</td><td>${x.qty}</td><td>${money(x.revenue)}</td><td>${money(x.cost)}${x.missingCost?' *':''}</td><td>${money(x.profit)}${x.missingCost?' *':''}</td></tr>`).join(''):'<tr><td colspan="5">ገና የሽያጭ መረጃ የለም።</td></tr>';
+}
+
 </script>
 </body>
 </html>
